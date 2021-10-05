@@ -24,12 +24,12 @@ public class ProductManagerTest{
     @Test
     public void shouldSaveBook() {
 
-        Book searchByBook = first;
-        manager.searchBy(searchByBook);
+        Book searchBy = first;
+        manager.searchBy("Moi Dodir");
 
 
 
-        Product[] actual = manager.searchBy(searchByBook);
+        Product[] actual = manager.searchBy("Moi Dodir");
         Product[] expected = new Product[] {first};
 
         assertArrayEquals(expected, actual);
