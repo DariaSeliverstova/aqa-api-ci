@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Book.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">statistics</a> &gt; <a href="index.source.html" class="el_package">ru.netology.domain</a> &gt; <span class="el_source">Book.java</span></div><h1>Book.java</h1><pre class="source lang-java linenums">package ru.netology.domain;
+
+import java.util.Objects;
+
+public class Book extends Product  {
+
+    private String avtor;
+    private String tittle;
+
+    @Override
+    public boolean equals(Object o) {
+<span class="nc bnc" id="L12" title="All 2 branches missed.">        if (this == o) return true;</span>
+<span class="nc bnc" id="L13" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) return false;</span>
+<span class="nc bnc" id="L14" title="All 2 branches missed.">        if (!super.equals(o)) return false;</span>
+<span class="nc" id="L15">        Book book = (Book) o;</span>
+<span class="nc bnc" id="L16" title="All 4 branches missed.">        return Objects.equals(avtor, book.avtor) &amp;&amp; Objects.equals(tittle, book.tittle);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L21">        return Objects.hash(super.hashCode(), avtor, tittle);</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L26">        return &quot;Book{&quot; +</span>
+                &quot;avtor='&quot; + avtor + '\'' +
+                &quot;, tittle='&quot; + tittle + '\'' +
+                '}';
+    }
+
+    public Book(String name, int id, int price, String avtor, String tittle) {
+<span class="fc" id="L33">        super(name, id, price);</span>
+<span class="fc" id="L34">        this.avtor = avtor;</span>
+<span class="fc" id="L35">        this.tittle = tittle;</span>
+<span class="fc" id="L36">    }</span>
+
+
+<span class="nc" id="L39">    public Book(String avtor, String tittle) {</span>
+<span class="nc" id="L40">        this.avtor = avtor;</span>
+<span class="nc" id="L41">        this.tittle = tittle;</span>
+<span class="nc" id="L42">    }</span>
+
+<span class="nc" id="L44">    public Book() {super();</span>
+<span class="nc" id="L45">    }</span>
+
+    public String getAvtor() {
+<span class="fc" id="L48">        return avtor;</span>
+    }
+
+    public void setAvtor(String avtor) {
+<span class="nc" id="L52">        this.avtor = avtor;</span>
+<span class="nc" id="L53">    }</span>
+
+    public String getTittle() {
+<span class="fc" id="L56">        return tittle;</span>
+    }
+
+    public void setTittle(String tittle) {
+<span class="nc" id="L60">        this.tittle = tittle;</span>
+<span class="nc" id="L61">    }</span>
+
+}
+
+
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

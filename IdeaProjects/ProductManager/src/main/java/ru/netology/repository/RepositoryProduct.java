@@ -2,10 +2,19 @@ package ru.netology.repository;
 
 import ru.netology.domain.Product;
 
+import java.util.Arrays;
+
 public class RepositoryProduct{
 private Product[] items = new Product[0];
 
-public void save(Product item) {
+    public RepositoryProduct(Product[] items) {
+        this.items = items;
+    }
+
+    public RepositoryProduct() {
+    }
+
+    public void save(Product item) {
     int length = items.length +1;
     Product[] tmp = new Product[length];
     System.arraycopy(items, 0, tmp, 0, items.length);
@@ -32,11 +41,25 @@ public void removeById(int id){
         }
     }
     items = tmp;
-};
+}
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        RepositoryProduct that = (RepositoryProduct) o;
+        return Arrays.equals(items, that.items);
+    }
 
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(items);
+    }
 
-
-
-
+    @Override
+    public String toString() {
+        return "RepositoryProduct{" +
+                "items=" + Arrays.toString(items) +
+                '}';
+    }
 }
