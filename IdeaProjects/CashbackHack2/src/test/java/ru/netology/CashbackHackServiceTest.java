@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CashbackHackServiceTest {
-    @Test
+    @org.testng.annotations.Test
     void showWorkCashback(){
         int boundary = 2000;
         int amount = 10;
@@ -18,7 +18,7 @@ public class CashbackHackServiceTest {
 
     }
 
-    @Test
+    @org.testng.annotations.Test
     void showWorkCashback2(){
         int boundary = 900;
         int amount = 10;
@@ -32,7 +32,7 @@ public class CashbackHackServiceTest {
 
     }
 
-    @Test
+    @org.testng.annotations.Test
     void showWorkCashback3(){
         int boundary = 1000;
         int amount = 10;
